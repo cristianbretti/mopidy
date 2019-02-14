@@ -1,0 +1,1555 @@
+============================= test session starts ==============================
+platform darwin -- Python 2.7.15, pytest-4.2.0, py-1.7.0, pluggy-0.8.1
+rootdir: /Users/Anna/Desktop/mopidy, inifile:
+plugins: cov-2.6.1
+ok
+collected 2272 items
+
+tests/test_commands.py ...........................................
+tests/test_exceptions.py .........
+tests/test_ext.py ................................
+tests/test_help.py .
+tests/test_httpclient.py ................
+tests/test_mixer.py ...
+tests/test_version.py .
+tests/audio/test_actor.py ...............................................................
+tests/audio/test_listener.py ......
+tests/audio/test_scan.py ............
+tests/audio/test_tags.py ...................................................
+tests/audio/test_utils.py ..
+tests/backend/test_backend.py ....
+tests/backend/test_listener.py ..
+tests/config/test_config.py ......................................
+tests/config/test_defaults.py ....
+tests/config/test_schemas.py .........
+tests/config/test_types.py ...............................................................
+tests/config/test_validator.py ...............
+tests/core/test_actor.py .....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 4
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 4
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+..
+tests/core/test_events.py .............
+tests/core/test_history.py .......
+tests/core/test_library.py ......................................................................
+tests/core/test_listener.py ...............
+tests/core/test_mixer.py ..............................
+tests/core/test_playback.py ...NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+.NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+............NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 9
+...NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+.......NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.............NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+......NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+.
+tests/core/test_playlists.py .................................................
+tests/core/test_tracklist.py hej
+.hej
+.hej
+.hej
+.hej
+.hej
+.hej
+.hej
+....hejjoo
+............
+tests/http/test_events.py ..
+tests/http/test_handlers.py ..............
+tests/http/test_server.py .....................
+tests/internal/test_deps.py ........
+tests/internal/test_encoding.py .....
+tests/internal/test_http.py ...
+tests/internal/test_jsonrpc.py ........................................
+tests/internal/test_models.py ...............................
+tests/internal/test_path.py ...........................................................
+tests/internal/test_playlists.py .............................
+tests/internal/test_validation.py .........................
+tests/internal/test_xdg.py ........
+tests/internal/network/test_connection.py .........................................................
+tests/internal/network/test_lineprotocol.py ....................................
+tests/internal/network/test_server.py ...........................
+tests/internal/network/test_utils.py .........
+tests/local/test_json.py .......
+tests/local/test_library.py .......................................
+tests/local/test_playback.py NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+hmmm
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 8
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+...NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+xNEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+.hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+hmmm
+NEXT TRACK TEST: entered branch 1
+.hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+...NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+hmmm
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+.hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+hmmm
+NEXT TRACK TEST: entered branch 1
+.hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 8
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 8
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 5
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 5
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+hmmm
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 5
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 4
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 5
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 3
+NEXT TRACK TEST: entered branch 4
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+...NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+...NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..
+tests/local/test_search.py .
+tests/local/test_tracklist.py .....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..............................
+tests/local/test_translator.py ................................
+tests/m3u/test_playlists.py .................s...............................s....................................s..............
+tests/m3u/test_translator.py ..........
+tests/models/test_fields.py .............................................
+tests/models/test_legacy.py .........................
+tests/models/test_models.py .......................................................................................................................................................................................
+tests/mpd/test_actor.py ..............
+tests/mpd/test_commands.py .................................
+tests/mpd/test_dispatcher.py ...
+tests/mpd/test_exceptions.py ........
+tests/mpd/test_status.py .NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 10
+.
+tests/mpd/test_tokenizer.py ........................
+tests/mpd/test_translator.py ...................
+tests/mpd/protocol/test_audio_output.py .............
+tests/mpd/protocol/test_authentication.py ..........
+tests/mpd/protocol/test_channels.py .....
+tests/mpd/protocol/test_command_list.py .....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+..
+tests/mpd/protocol/test_connection.py ....
+tests/mpd/protocol/test_current_playlist.py ............................................................
+tests/mpd/protocol/test_idle.py ..............................
+tests/mpd/protocol/test_mount.py ....
+tests/mpd/protocol/test_music_db.py .................................................................................................................................................................................................................
+tests/mpd/protocol/test_playback.py ...........................NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+..NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+....NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+...............
+tests/mpd/protocol/test_reflection.py ........
+tests/mpd/protocol/test_regression.py NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 5
+NEXT TRACK TEST: entered branch 6
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 1
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+.....
+tests/mpd/protocol/test_status.py .NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 7
+...NEXT TRACK TEST: entered branch 1
+NEXT TRACK TEST: entered branch 2
+.
+tests/mpd/protocol/test_stickers.py ......
+tests/mpd/protocol/test_stored_playlists.py ................................................
+tests/stream/test_library.py ....
+tests/stream/test_playback.py ........
+
+=============================== warnings summary ===============================
+tests/audio/test_tags.py::TestConvertTaglist::test_integer_tag
+  /Users/Anna/Desktop/mopidy/tests/audio/test_tags.py:30: Warning: gvalue.c:179: cannot initialize GValue with type 'GValue', the value has already been initialized as 'guint'
+    gobject_value.init(GObject.TYPE_VALUE)
+
+tests/core/test_actor.py::CoreActorSaveLoadStateTest::test_load_state_with_data
+tests/core/test_actor.py::CoreActorSaveLoadStateTest::test_load_state_with_data
+tests/core/test_playback.py::TestPlayHandling::test_play_skips_to_next_on_unplayable_track
+tests/core/test_playback.py::TestPlayHandling::test_resume_skips_to_next_on_unplayable_track
+tests/core/test_playback.py::TestPlayHandling::test_resume_skips_to_next_on_unplayable_track
+tests/core/test_playback.py::TestNextHandling::test_get_current_tl_track_next
+tests/core/test_playback.py::TestNextHandling::test_get_current_tl_track_next
+tests/core/test_playback.py::TestNextHandling::test_get_pending_tl_track_next
+tests/core/test_playback.py::TestNextHandling::test_get_pending_tl_track_next
+tests/core/test_playback.py::TestNextHandling::test_get_current_track_next
+tests/core/test_playback.py::TestNextHandling::test_get_current_track_next
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[False-False-False-False-0-1]
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[False-False-False-False-2-None]
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[True-False-False-False-0-1]
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[True-False-False-False-2-0]
+tests/core/test_playback.py::TestNextHandling::test_next_keeps_finished_track_in_tracklist
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_unplayable_track
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_unplayable_track
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_change_track_error
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_change_track_error
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_change_track_error
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_keeps_finished_track_in_tracklist
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_error
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_error
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_mode_removes_finished_track
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_mode_removes_unplayable_track
+tests/core/test_playback.py::TestConsumeHandling::test_on_about_to_finish_in_consume_mode_removes_finished_track
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_and_repeat_mode_returns_none_on_last_track
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_and_repeat_mode_returns_none_on_last_track
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_and_repeat_mode_returns_none_on_last_track
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_and_repeat_mode_returns_none_on_last_track
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_pending_tl_track_is_none
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_pending_tl_track_after_about_to_finish
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_pending_tl_track_after_about_to_finish
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_about_to_finish
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_about_to_finish
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_stream_changed
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_stream_changed
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_end_of_stream
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_end_of_stream
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_end_of_stream
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_end_of_stream
+tests/core/test_playback.py::TestUnplayableURI::test_play_skips_to_next_if_track_is_unplayable
+tests/core/test_playback.py::TestStream::test_get_stream_title_during_playback
+tests/core/test_playback.py::TestStream::test_get_stream_title_during_playback_with_tags_change
+tests/core/test_playback.py::TestStream::test_get_stream_title_after_next
+tests/core/test_playback.py::TestStream::test_get_stream_title_after_next
+tests/core/test_playback.py::TestStream::test_get_stream_title_after_next_with_tags_change
+tests/core/test_playback.py::TestStream::test_get_stream_title_after_next_with_tags_change
+tests/core/test_playback.py::TestStream::test_get_stream_title_after_stop
+tests/core/test_playback.py::TestCorePlaybackWithOldBackend::test_type_error_from_old_backend_does_not_crash_core
+tests/core/test_playback.py::TestCorePlaybackWithOldBackend::test_type_error_from_old_backend_does_not_crash_core
+tests/core/test_playback.py::TestBug1177Regression::test
+tests/core/test_playback.py::TestBug1177Regression::test
+tests/core/test_playback.py::TestBug1352Regression::test_next_when_paused_updates_history
+tests/core/test_playback.py::TestBug1352Regression::test_next_when_paused_updates_history
+tests/core/test_playback.py::TestEndlessLoop::test_play
+tests/core/test_playback.py::TestEndlessLoop::test_play
+tests/core/test_playback.py::TestEndlessLoop::test_play
+tests/core/test_playback.py::TestEndlessLoop::test_play
+tests/core/test_playback.py::TestEndlessLoop::test_next
+tests/core/test_playback.py::TestEndlessLoop::test_next
+tests/core/test_playback.py::TestEndlessLoop::test_next
+tests/core/test_playback.py::TestEndlessLoop::test_next
+tests/core/test_playback.py::TestEndlessLoop::test_next
+tests/core/test_playback.py::TestEndlessLoop::test_next
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_about_to_finish_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_about_to_finish_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_about_to_finish_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_after_completed_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_after_completed_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_during_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_playlist_stops
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_starts_next_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_starts_next_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_and_random_stops
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_and_repeat_starts_same
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_random_and_repeat_starts_same
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_stops
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_skips_to_next_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_before_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_during_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_during_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_empty_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_with_random_after_append_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_with_random_after_append_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_skips_to_next_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_skips_to_next_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_skips_to_next_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_before_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_during_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_during_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_empty_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_with_random_after_append_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_with_random_after_append_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_with_single_and_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_with_single_and_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_on_tracklist_change_when_paused
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_on_tracklist_change_when_playing
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_pause_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_pause_when_paused
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_pause_when_playing
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_flac
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_mp3
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_ogg
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_sets_current_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_skips_to_next_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_skips_to_next_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_state
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_then_enable_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_then_enable_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_then_enable_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_then_enable_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_then_enable_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_then_enable_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_uri_with_non_ascii_bytes
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_when_paused
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_when_paused_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_when_paused_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_when_paused_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_when_playing
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_with_empty_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_with_empty_playlist_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_played_track_during_random_not_played_again
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_played_track_during_random_not_played_again
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_played_track_during_random_not_played_again
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_played_track_during_random_not_played_again
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_played_track_during_random_not_played_again
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_does_not_trigger_playback
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_does_not_trigger_playback
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_more
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_more
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_more
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_until_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_resume_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_resume_when_paused
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_resume_when_playing
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_beyond_end_of_song_for_last_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_beyond_end_of_song_jumps_to_next_song
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_beyond_end_of_song_jumps_to_next_song
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_when_paused
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_when_paused_updates_position
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_when_playing
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_when_playing_updates_position
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_when_stopped
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_when_stopped_triggers_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_when_stopped_updates_position
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_stop_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_stop_when_paused
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_stop_when_playing
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_time_position_when_paused
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_tracklist_position_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_tracklist_position_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_tracklist_position_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_tracklist_position_during_play
+tests/local/test_tracklist.py::LocalTracklistProviderTest::test_add_preserves_playing_state
+tests/local/test_tracklist.py::LocalTracklistProviderTest::test_clear_when_playing
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_consume_is_0
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_consume_is_1
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_playlist
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_playlistlength
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_random_is_0
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_random_is_1
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_repeat_is_0
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_repeat_is_1
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_single
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_state_is_pause
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_state_is_play
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_state_is_stop
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_volume
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_volume_with_na_value
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_contains_xfade
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_bitrate
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_bitrate
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_elapsed
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_elapsed
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_time_with_length
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_time_with_length
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_time_with_no_length
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playing_contains_time_with_no_length
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_nextsong
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_nextsong
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_nextsongid
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_nextsongid
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_song
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_song
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_tlid_as_songid
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_playlist_loaded_contains_tlid_as_songid
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_starting_playing_contains_elapsed_zero
+tests/mpd/test_status.py::StatusHandlerTest::test_status_method_when_starting_playing_contains_elapsed_zero
+tests/mpd/protocol/test_command_list.py::CommandListsTest::test_command_list_with_error_returns_ack_with_correct_index
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_minus_is_ignored_if_playing
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_minus_one_plays_current_track_if_current_track_is_set
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_minus_one_plays_current_track_if_current_track_is_set
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_minus_one_resumes_if_paused
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_without_pos
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid_minus_1_plays_current_track_if_current_track_is_set
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid_minus_1_plays_current_track_if_current_track_is_set
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid_minus_is_ignored_if_playing
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid_minus_one_resumes_if_paused
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seek_in_another_track
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seek_in_current_track
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seek_without_quotes
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seekcur_absolute_value
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seekcur_negative_diff
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seekcur_positive_diff
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seekid_in_another_track
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seekid_in_current_track
+tests/mpd/protocol/test_regression.py::IssueGH17RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH17RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH17RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH17RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH17RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH17RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH18RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH18RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH18RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH18RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH18RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH18RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH22RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH22RegressionTest::test
+tests/mpd/protocol/test_regression.py::IssueGH69RegressionTest::test
+tests/mpd/protocol/test_status.py::StatusHandlerTest::test_currentsong
+tests/mpd/protocol/test_status.py::StatusHandlerTest::test_status_command
+  /Users/Anna/Desktop/mopidy/mopidy/internal/deprecation.py:71: PendingDeprecationWarning: tracklist.next_track() is pending deprecation, use tracklist.get_next_tlid()
+    warnings.warn(_MESSAGES.get(msg_id, msg_id), category)
+
+tests/core/test_playback.py::TestPlayHandling::test_get_current_tl_track_play
+tests/core/test_playback.py::TestPlayHandling::test_get_current_track_play
+tests/core/test_playback.py::TestPlayHandling::test_get_current_tlid_play
+tests/core/test_playback.py::TestPlayHandling::test_play_skips_to_next_on_unplayable_track
+tests/core/test_playback.py::TestPlayHandling::test_resume_skips_to_next_on_unplayable_track
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[False-False-False-False-0-1]
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[False-False-False-False-2-None]
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[True-False-False-False-0-1]
+tests/core/test_playback.py::TestNextHandling::test_next_all_modes[True-False-False-False-2-0]
+tests/core/test_playback.py::TestNextHandling::test_next_keeps_finished_track_in_tracklist
+tests/core/test_playback.py::TestNextHandling::test_next_skips_over_unplayable_track
+tests/core/test_playback.py::TestPreviousHandling::test_get_current_tl_track_prev
+tests/core/test_playback.py::TestPreviousHandling::test_get_current_track_prev
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[False-False-False-False-0-None]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[False-False-False-False-1-0]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[True-False-False-False-0-0]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[True-False-False-False-1-1]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_keeps_finished_track_in_tracklist
+tests/core/test_playback.py::TestPreviousHandling::test_previous_keeps_finished_track_even_in_consume_mode
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_unplayable_track
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_change_track_error
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_keeps_finished_track_in_tracklist
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_error
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_mode_removes_finished_track
+tests/core/test_playback.py::TestConsumeHandling::test_next_in_consume_mode_removes_unplayable_track
+tests/core/test_playback.py::TestConsumeHandling::test_on_about_to_finish_in_consume_mode_removes_finished_track
+tests/core/test_playback.py::TestBackendSelection::test_play_selects_dummy1_backend
+tests/core/test_playback.py::TestBackendSelection::test_play_selects_dummy2_backend
+tests/core/test_playback.py::TestBackendSelection::test_pause_selects_dummy1_backend
+tests/core/test_playback.py::TestBackendSelection::test_pause_selects_dummy2_backend
+tests/core/test_playback.py::TestBackendSelection::test_resume_selects_dummy1_backend
+tests/core/test_playback.py::TestBackendSelection::test_resume_selects_dummy2_backend
+tests/core/test_playback.py::TestBackendSelection::test_stop_selects_dummy1_backend
+tests/core/test_playback.py::TestBackendSelection::test_stop_selects_dummy2_backend
+tests/core/test_playback.py::TestBackendSelection::test_seek_selects_dummy1_backend
+tests/core/test_playback.py::TestBackendSelection::test_seek_selects_dummy2_backend
+tests/core/test_playback.py::TestBackendSelection::test_time_position_selects_dummy1_backend
+tests/core/test_playback.py::TestBackendSelection::test_time_position_selects_dummy2_backend
+tests/core/test_playback.py::TestCorePlaybackSaveLoadState::test_save
+tests/core/test_playback.py::TestEndlessLoop::test_play
+tests/core/test_playback.py::TestEndlessLoop::test_next
+tests/core/test_playback.py::TestEndlessLoop::test_previous
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_after_completed_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_after_completed_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_playlist_stops
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_sets_current_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_play_track_state
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playing_track_that_isnt_in_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_skips_to_previous_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_seek_beyond_end_of_song_for_last_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_tracklist_position_at_end_of_playlist
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_pause_off
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_pause_on
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_pause_toggle
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_minus_one_plays_current_track_if_current_track_is_set
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_minus_one_plays_first_in_playlist_if_no_current_track
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_with_pos
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_play_with_pos_without_quotes
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid_minus_1_plays_current_track_if_current_track_is_set
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid_minus_1_plays_first_in_playlist_if_no_current_track
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_playid_without_quotes
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seek_in_another_track
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seekid_in_another_track
+tests/mpd/protocol/test_playback.py::PlaybackControlHandlerTest::test_seekid_in_current_track
+  /Users/Anna/Desktop/mopidy/mopidy/internal/deprecation.py:71: PendingDeprecationWarning: core.playback.play:tl_track_kwarg
+    warnings.warn(_MESSAGES.get(msg_id, msg_id), category)
+
+tests/core/test_playback.py::TestPreviousHandling::test_get_current_tl_track_prev
+tests/core/test_playback.py::TestPreviousHandling::test_get_current_track_prev
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[False-False-False-False-0-None]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[False-False-False-False-1-0]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[True-False-False-False-0-0]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_all_modes[True-False-False-False-1-1]
+tests/core/test_playback.py::TestPreviousHandling::test_previous_keeps_finished_track_in_tracklist
+tests/core/test_playback.py::TestPreviousHandling::test_previous_keeps_finished_track_even_in_consume_mode
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_unplayable_track
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_unplayable_track
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_change_track_error
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_change_track_error
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestPreviousHandling::test_previous_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestEndlessLoop::test_previous
+tests/core/test_playback.py::TestEndlessLoop::test_previous
+tests/core/test_playback.py::TestEndlessLoop::test_previous
+tests/core/test_playback.py::TestEndlessLoop::test_previous
+tests/core/test_playback.py::TestEndlessLoop::test_previous
+tests/core/test_playback.py::TestEndlessLoop::test_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_about_to_finish_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_next_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_does_not_trigger_playback
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_more
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_skips_to_previous_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_skips_to_previous_track_on_failure
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_next
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_before_play
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_empty_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_previous_with_random
+  /Users/Anna/Desktop/mopidy/mopidy/internal/deprecation.py:71: PendingDeprecationWarning: tracklist.previous_track() is pending deprecation, use tracklist.get_previous_tlid()
+    warnings.warn(_MESSAGES.get(msg_id, msg_id), category)
+
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_keeps_finished_track_in_tracklist
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_error
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_error
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestOnAboutToFinish::test_on_about_to_finish_skips_over_change_track_unplayable
+tests/core/test_playback.py::TestConsumeHandling::test_on_about_to_finish_in_consume_mode_removes_finished_track
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_pending_tl_track_after_about_to_finish
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_about_to_finish
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_stream_changed
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_end_of_stream
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_end_of_stream
+tests/core/test_playback.py::TestCurrentAndPendingTlTrack::test_current_tl_track_after_end_of_stream
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/core/test_playback.py::TestEndlessLoop::test_on_about_to_finish
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_about_to_finish_after_previous
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_current_track_after_completed_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_playlist_stops
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_starts_next_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_and_random_stops
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_and_repeat_starts_same
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_random_and_repeat_starts_same
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_song_with_single_stops
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_return_value
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_at_end_of_playlist_with_repeat
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_with_random_after_append_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_track_with_random_after_append_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_end_of_track_with_random
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_playlist_is_empty_after_all_tracks_are_played_with_consume
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_random_with_eot_until_end_of_playlist_and_play_from_start
+tests/local/test_playback.py::LocalPlaybackProviderTest::test_tracklist_position_at_end_of_playlist
+  /Users/Anna/Desktop/mopidy/mopidy/internal/deprecation.py:71: PendingDeprecationWarning: tracklist.eot_track() is pending deprecation, use tracklist.get_eot_tlid()
+    warnings.warn(_MESSAGES.get(msg_id, msg_id), category)
+
+tests/internal/network/test_connection.py::ConnectionTest::test_disable_recv_already_deregistered
+  /usr/local/lib/python2.7/site-packages/mock/mock.py:1334: PyGIDeprecationWarning: GObject.source_remove is deprecated; use GLib.source_remove instead
+    original = getattr(target, name, DEFAULT)
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_recv_already_registered
+  /usr/local/lib/python2.7/site-packages/mock/mock.py:1334: PyGIDeprecationWarning: GObject.io_add_watch is deprecated; use GLib.io_add_watch instead
+    original = getattr(target, name, DEFAULT)
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_recv_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:281: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    GObject.IO_IN | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_recv_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:281: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    GObject.IO_IN | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_recv_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:281: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    GObject.IO_IN | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_recv_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:174: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    GObject.IO_IN | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_recv_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:174: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    GObject.IO_IN | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_recv_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:174: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    GObject.IO_IN | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_send_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:299: PyGIDeprecationWarning: GObject.IO_OUT is deprecated; use GLib.IO_OUT instead
+    GObject.IO_OUT | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_send_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:299: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    GObject.IO_OUT | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_send_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:299: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    GObject.IO_OUT | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_send_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:228: PyGIDeprecationWarning: GObject.IO_OUT is deprecated; use GLib.IO_OUT instead
+    GObject.IO_OUT | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_send_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:228: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    GObject.IO_OUT | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_send_registers_with_gobject
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:228: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    GObject.IO_OUT | GObject.IO_ERR | GObject.IO_HUP,
+
+tests/internal/network/test_connection.py::ConnectionTest::test_enable_timeout_add_gobject_timeout
+  /usr/local/lib/python2.7/site-packages/mock/mock.py:1334: PyGIDeprecationWarning: GObject.timeout_add_seconds is deprecated; use GLib.timeout_add_seconds instead
+    original = getattr(target, name, DEFAULT)
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_gets_no_data
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:420: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_gets_no_data
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_handles_dead_actors
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_recoverable_error
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_recoverable_error
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup_and_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_sends_data_to_actor
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_unrecoverable_error
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:312: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    if flags & (GObject.IO_ERR | GObject.IO_HUP):
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_gets_no_data
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_handles_dead_actors
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_recoverable_error
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_recoverable_error
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup_and_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_sends_data_to_actor
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_unrecoverable_error
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:312: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    if flags & (GObject.IO_ERR | GObject.IO_HUP):
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_handles_dead_actors
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:411: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_recoverable_error
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_recoverable_error
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:433: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:374: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:374: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:382: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_HUP))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:382: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_HUP))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup_and_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:391: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    GObject.IO_IN | GObject.IO_HUP | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup_and_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:391: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    GObject.IO_IN | GObject.IO_HUP | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_respects_io_hup_and_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:391: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    GObject.IO_IN | GObject.IO_HUP | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_sends_data_to_actor
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:400: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_recv_callback_unrecoverable_error
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:441: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_acquires_and_releases_lock
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:486: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_acquires_and_releases_lock
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_fails_to_acquire_lock
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup_and_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_sends_all_data
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_sends_partial_data
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:336: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    if flags & (GObject.IO_ERR | GObject.IO_HUP):
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_acquires_and_releases_lock
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_fails_to_acquire_lock
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup_and_io_err
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_sends_all_data
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_sends_partial_data
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:336: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    if flags & (GObject.IO_ERR | GObject.IO_HUP):
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_fails_to_acquire_lock
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:498: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:452: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:452: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:463: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_HUP))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:463: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    self.mock, sentinel.fd, GObject.IO_IN | GObject.IO_HUP))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup_and_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:475: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    GObject.IO_IN | GObject.IO_HUP | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup_and_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:475: PyGIDeprecationWarning: GObject.IO_HUP is deprecated; use GLib.IO_HUP instead
+    GObject.IO_IN | GObject.IO_HUP | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_respects_io_hup_and_io_err
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:475: PyGIDeprecationWarning: GObject.IO_ERR is deprecated; use GLib.IO_ERR instead
+    GObject.IO_IN | GObject.IO_HUP | GObject.IO_ERR))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_sends_all_data
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:509: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_connection.py::ConnectionTest::test_send_callback_sends_partial_data
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_connection.py:521: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fd, GObject.IO_IN))
+
+tests/internal/network/test_server.py::ServerTest::test_handle_connection
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_server.py:167: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fileno, GObject.IO_IN))
+
+tests/internal/network/test_server.py::ServerTest::test_handle_connection_exceeded_connections
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_server.py:180: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    self.mock, sentinel.fileno, GObject.IO_IN))
+
+tests/internal/network/test_server.py::ServerTest::test_register_server_socket_sets_up_io_watch
+  /Users/Anna/Desktop/mopidy/mopidy/internal/network.py:134: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    GObject.IO_IN,
+
+tests/internal/network/test_server.py::ServerTest::test_register_server_socket_sets_up_io_watch
+  /Users/Anna/Desktop/mopidy/tests/internal/network/test_server.py:159: PyGIDeprecationWarning: GObject.IO_IN is deprecated; use GLib.IO_IN instead
+    sentinel.fileno, GObject.IO_IN, self.mock.handle_connection)
+
+-- Docs: https://docs.pytest.org/en/latest/warnings.html
+========================== deprecated python version ===========================
+You are using Python 2.7.15, which will no longer be supported in pytest 5.0
+For more information, please read:
+  https://docs.pytest.org/en/latest/py27-py34-deprecation.html
+======= 2268 passed, 3 skipped, 1 xfailed, 599 warnings in 74.79 seconds =======
