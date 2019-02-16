@@ -22,10 +22,6 @@ def my_fixture():
 
 class BaseCoreLibraryTest(unittest.TestCase):
 
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down BaseCoreLibraryTest")
-
     def setUp(self):  # noqa: N802
         dummy1_root = Ref.directory(uri='dummy1:directory', name='dummy1')
         self.backend1 = mock.Mock()
@@ -60,10 +56,6 @@ class BaseCoreLibraryTest(unittest.TestCase):
 
 # TODO: split by method
 class CoreLibraryTest(BaseCoreLibraryTest):
-
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down CoreLibraryTest")
 
     def test_get_images_returns_empty_dict_for_no_uris(self):
         self.assertEqual({}, self.core.library.get_images([]))
@@ -301,10 +293,6 @@ class CoreLibraryTest(BaseCoreLibraryTest):
 
 class DeprecatedFindExactCoreLibraryTest(BaseCoreLibraryTest):
 
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down DeprecatedFindExactCoreLibraryTest")
-
     def run(self, result=None):
         with deprecation.ignore('core.library.find_exact'):
             return super(DeprecatedFindExactCoreLibraryTest, self).run(result)
@@ -387,10 +375,6 @@ class DeprecatedFindExactCoreLibraryTest(BaseCoreLibraryTest):
 
 class DeprecatedLookupCoreLibraryTest(BaseCoreLibraryTest):
 
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down DeprecatedLookupCoreLibraryTest")
-
     def run(self, result=None):
         with deprecation.ignore('core.library.lookup:uri_arg'):
             return super(DeprecatedLookupCoreLibraryTest, self).run(result)
@@ -418,10 +402,6 @@ class DeprecatedLookupCoreLibraryTest(BaseCoreLibraryTest):
 
 
 class LegacyFindExactToSearchLibraryTest(unittest.TestCase):
-
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down LegacyFindExactToSearchLibraryTest")
 
     def run(self, result=None):
         with deprecation.ignore('core.library.find_exact'):
@@ -462,10 +442,6 @@ class LegacyFindExactToSearchLibraryTest(unittest.TestCase):
 
 class MockBackendCoreLibraryBase(unittest.TestCase):
 
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down MockBackendCoreLibraryBase")
-
     def setUp(self):  # noqa: N802
         dummy_root = Ref.directory(uri='dummy:directory', name='dummy')
 
@@ -482,10 +458,6 @@ class MockBackendCoreLibraryBase(unittest.TestCase):
 
 @mock.patch('mopidy.core.library.logger')
 class BrowseBadBackendTest(MockBackendCoreLibraryBase):
-
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down BrowseBadBackendTest")
 
     def test_backend_raises_exception_for_root(self, logger):
         # Might happen if root_directory is a property for some weird reason.
@@ -517,10 +489,6 @@ class BrowseBadBackendTest(MockBackendCoreLibraryBase):
 @mock.patch('mopidy.core.library.logger')
 class GetDistinctBadBackendTest(MockBackendCoreLibraryBase):
 
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down GetDistinctBadBackendTest")
-
     def test_backend_raises_exception(self, logger):
         self.library.get_distinct.return_value.get.side_effect = Exception
         self.assertEqual(set(), self.core.library.get_distinct('artist'))
@@ -544,10 +512,6 @@ class GetDistinctBadBackendTest(MockBackendCoreLibraryBase):
 
 @mock.patch('mopidy.core.library.logger')
 class GetImagesBadBackendTest(MockBackendCoreLibraryBase):
-
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down GetImagesBadBackendTest")
 
     def test_backend_raises_exception(self, logger):
         uri = 'dummy:/1'
@@ -588,9 +552,6 @@ class GetImagesBadBackendTest(MockBackendCoreLibraryBase):
 
 @mock.patch('mopidy.core.library.logger')
 class LookupByUrisBadBackendTest(MockBackendCoreLibraryBase):
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down LookupByUrisBadBackendTest")
 
     def test_backend_raises_exception(self, logger):
         uri = 'dummy:/1'
@@ -638,10 +599,6 @@ class LookupByUrisBadBackendTest(MockBackendCoreLibraryBase):
 @mock.patch('mopidy.core.library.logger')
 class RefreshBadBackendTest(MockBackendCoreLibraryBase):
 
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down RefreshBadBackendTest")
-
     def test_backend_raises_exception(self, logger):
         self.library.refresh.return_value.get.side_effect = Exception
         self.core.library.refresh()
@@ -655,10 +612,6 @@ class RefreshBadBackendTest(MockBackendCoreLibraryBase):
 
 @mock.patch('mopidy.core.library.logger')
 class SearchBadBackendTest(MockBackendCoreLibraryBase):
-
-    @classmethod
-    def tearDownClass(cls):
-        print("Tear down SearchBadBackendTest")
 
     def test_backend_raises_exception(self, logger):
         self.library.search.return_value.get.side_effect = Exception
