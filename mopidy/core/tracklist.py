@@ -11,6 +11,8 @@ from mopidy.models import TlTrack, Track
 
 logger = logging.getLogger(__name__)
 
+addBranches = [False] * 16
+
 
 class TracklistController(object):
     pykka_traversable = True
@@ -412,48 +414,79 @@ class TracklistController(object):
         .. deprecated:: 1.0
             The ``tracks`` and ``uri`` arguments. Use ``uris``.
         """
-        if sum(o is not None for o in [tracks, uri, uris]) != 1:
+        # if sum(o is not None for o in [tracks, uri, uris]) != 1:
+        #    raise ValueError(
+        #        'Exactly one of "tracks", "uri" or "uris" must be set')
+
+        sum = 0
+        for o in [tracks, uri, uris]:
+            addBranches[0] = True
+            if o is not None:
+                addBranches[1] = True
+                sum += 1
+
+        if sum != 1:
+            addBranches[2] = True
             raise ValueError(
                 'Exactly one of "tracks", "uri" or "uris" must be set')
 
-        tracks is None or validation.check_instances(tracks, Track)
-        uri is None or validation.check_uri(uri)
-        uris is None or validation.check_uris(uris)
+        #tracks is None or validation.check_instances(tracks, Track)
+        if tracks is not None:
+            addBranches[3] = True
+            validation.check_instances(tracks, Track)
+        #uri is None or validation.check_uri(uri)
+        if uri is not None:
+            addBranches[4] = True
+            validation.check_uri(uri)
+        #uris is None or validation.check_uris(uris)
+        if uris is not None:
+            addBranches[5] = True
+            validation.check_uris(uris)
         validation.check_integer(at_position or 0)
 
         if tracks:
+            addBranches[6] = True
             deprecation.warn('core.tracklist.add:tracks_arg')
 
         if uri:
+            addBranches[7] = True
             deprecation.warn('core.tracklist.add:uri_arg')
 
         if tracks is None:
+            addBranches[8] = True
             if uri is not None:
+                addBranches[9] = True
                 uris = [uri]
 
             tracks = []
             track_map = self.core.library.lookup(uris=uris)
             for uri in uris:
+                addBranches[10] = True
                 tracks.extend(track_map[uri])
 
         tl_tracks = []
         max_length = self.core._config['core']['max_tracklist_length']
 
         for track in tracks:
+            addBranches[11] = True
             if self.get_length() >= max_length:
+                addBranches[12] = True
                 raise exceptions.TracklistFull(
                     'Tracklist may contain at most %d tracks.' % max_length)
 
             tl_track = TlTrack(self._next_tlid, track)
             self._next_tlid += 1
             if at_position is not None:
+                addBranches[13] = True
                 self._tl_tracks.insert(at_position, tl_track)
                 at_position += 1
             else:
+                addBranches[14] = True
                 self._tl_tracks.append(tl_track)
             tl_tracks.append(tl_track)
 
         if tl_tracks:
+            addBranches[15] = True
             self._increase_version()
 
         return tl_tracks

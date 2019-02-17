@@ -1,4 +1,4 @@
-from __future__ import absolute_import, unicode_literals
+from __future__ import absolute_import, unicode_literals, division
 
 import unittest
 
@@ -8,6 +8,18 @@ from mopidy import backend, core
 from mopidy.internal import deprecation
 from mopidy.internal.models import TracklistState
 from mopidy.models import TlTrack, Track
+
+import pytest
+@pytest.fixture(scope="session", autouse=True)
+def my_fixture():
+    print('INITIALIZATION')
+    yield
+    print('TEAR DOWN')
+    coverageArray = core.tracklist.addBranches
+    print(len(coverageArray))
+    print(coverageArray)
+    addCoverage = sum(coverageArray) / len(coverageArray) * 100
+    print("lookup coverage: " + str(addCoverage) + "%")
 
 
 class TracklistTest(unittest.TestCase):
