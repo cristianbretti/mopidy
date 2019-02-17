@@ -2,6 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 import os
 import unittest
+import pytest
 
 from mopidy import exceptions
 from mopidy.audio import scan
@@ -31,6 +32,18 @@ class ScannerTest(unittest.TestCase):
                 self.result[key] = scanner.scan(uri)
             except exceptions.ScannerError as error:
                 self.errors[key] = error
+    
+    def scanZeroTime(self, paths):
+        scannerZeroTime = scan.Scanner()
+        print(paths)
+        for path in paths:
+            print(path)
+            uri = path_lib.path_to_uri(path)
+            key = uri[len('file://'):]
+            time = 0
+            scannerZeroTime.__init__(0)
+            self.result[key] = scannerZeroTime.scan(uri, time)
+
 
     def check(self, name, key, value):
         name = path_to_data_dir(name)
@@ -42,6 +55,11 @@ class ScannerTest(unittest.TestCase):
                 continue
             if not result.playable and result.mime == 'audio/mpeg':
                 raise unittest.SkipTest('Missing MP3 support?')
+
+    def test_zero_time(self):
+        #An exception: exceptions.ScannerError should be raised
+        with pytest.raises(exceptions.ScannerError) as excinfo:
+            self.scanZeroTime(self.find('scanner/simple'))
 
     def test_tags_is_set(self):
         self.scan(self.find('scanner/simple'))
