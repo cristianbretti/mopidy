@@ -191,6 +191,24 @@ class LibraryController(object):
         deprecation.warn('core.library.find_exact')
         return self.search(query=query, uris=uris, exact=True, **kwargs)
 
+    def onlyOneOfParamsAreSet(self, uri, uris):
+        if sum(o is not None for o in [uri, uris]) != 1:
+            raise ValueError('Exactly one of "uri" or "uris" must be set')
+
+    def validationCheckUrisIfNotNone(self, uris):
+        uris is None or validation.check_uris(uris)
+    
+    def validationCheckUriIfNotNone(self, uri):
+        uri is None or validation.check_uri(uri)
+
+    def lookupBackendOfUris(self, uris, futures):
+        # TODO: lookup(uris) to backend APIs
+        for backend, backend_uris in self._get_backends_to_uris(uris).items():
+            if backend_uris:
+                for u in backend_uris:
+                    futures[(backend, u)] = backend.library.lookup(u)
+
+
     def lookup(self, uri=None, uris=None):
         """
         Lookup the given URIs.
@@ -211,11 +229,10 @@ class LibraryController(object):
         .. deprecated:: 1.0
             The ``uri`` argument. Use ``uris`` instead.
         """
-        if sum(o is not None for o in [uri, uris]) != 1:
-            raise ValueError('Exactly one of "uri" or "uris" must be set')
+        self.onlyOneOfParamsAreSet(uri, uris)
 
-        uris is None or validation.check_uris(uris)
-        uri is None or validation.check_uri(uri)
+        self.validationCheckUrisIfNotNone(uris)
+        self.validationCheckUriIfNotNone(uri)
 
         if uri:
             deprecation.warn('core.library.lookup:uri_arg')
@@ -226,11 +243,7 @@ class LibraryController(object):
         futures = {}
         results = {u: [] for u in uris}
 
-        # TODO: lookup(uris) to backend APIs
-        for backend, backend_uris in self._get_backends_to_uris(uris).items():
-            if backend_uris:
-                for u in backend_uris:
-                    futures[(backend, u)] = backend.library.lookup(u)
+        self.lookupBackendOfUris(uris, futures)
 
         for (backend, u), future in futures.items():
             with _backend_error_handling(backend):
