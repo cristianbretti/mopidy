@@ -379,6 +379,23 @@ class TracklistController(object):
         # 1 - len(tracks) Thus 'position - 1' will always be within the list.
         return self._tl_tracks[position - 1]
 
+    def check_only_one_set(self, items):
+        if sum(o is not None for o in items) != 1:
+            raise ValueError(
+                'Exactly one of "tracks", "uri" or "uris" must be set')
+
+    def check_add_args(self, tracks, at_position, uri, uris):
+        tracks is None or validation.check_instances(tracks, Track)
+        uri is None or validation.check_uri(uri)
+        uris is None or validation.check_uris(uris)
+        validation.check_integer(at_position or 0)
+
+        if tracks:
+            deprecation.warn('core.tracklist.add:tracks_arg')
+
+        if uri:
+            deprecation.warn('core.tracklist.add:uri_arg')
+
     def add(self, tracks=None, at_position=None, uri=None, uris=None):
         """
         Add tracks to the tracklist.
@@ -412,20 +429,9 @@ class TracklistController(object):
         .. deprecated:: 1.0
             The ``tracks`` and ``uri`` arguments. Use ``uris``.
         """
-        if sum(o is not None for o in [tracks, uri, uris]) != 1:
-            raise ValueError(
-                'Exactly one of "tracks", "uri" or "uris" must be set')
+        self.check_only_one_set([tracks, uri, uris])
 
-        tracks is None or validation.check_instances(tracks, Track)
-        uri is None or validation.check_uri(uri)
-        uris is None or validation.check_uris(uris)
-        validation.check_integer(at_position or 0)
-
-        if tracks:
-            deprecation.warn('core.tracklist.add:tracks_arg')
-
-        if uri:
-            deprecation.warn('core.tracklist.add:uri_arg')
+        self.check_add_args(tracks, at_position, uri, uris)
 
         if tracks is None:
             if uri is not None:
