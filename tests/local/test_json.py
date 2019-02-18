@@ -90,3 +90,15 @@ class JsonLibraryTest(unittest.TestCase):
 
         self.assertEqual(expected, result)
         self.assertEqual(expected_exact, result_exact)
+
+    def test_get_distinct(self):
+        # get_distinct should return empty set for non-matching fields
+        result = json.JsonLibrary.get_distinct(self.library, "asdf", None)
+        self.assertEqual(set(), result)
+
+        # get_distinct should return empty set for empty queries
+        fieldTypes = ["track", "artist", "albumartist",
+                      "album", "composer", "performer", "date", "genre"]
+        for field in fieldTypes:
+            result = json.JsonLibrary.get_distinct(self.library, field, {})
+            self.assertEqual(set(), result)
