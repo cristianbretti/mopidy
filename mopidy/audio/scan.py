@@ -185,7 +185,6 @@ def _query_seekable(pipeline):
     pipeline.query(query)
     return query.parse_seeking()[1]
 
-
 def _process(pipeline, timeout_ms):
     bus = pipeline.get_bus()
     tags = {}
@@ -221,7 +220,7 @@ def _process(pipeline, timeout_ms):
                 if mime_check(mime):
                     return tags, mime, have_audio, duration
             elif msg.get_structure().get_name() == 'have-audio':
-                have_audio = True
+                have_audio = True            
         elif msg.type == Gst.MessageType.ERROR:
             error = encoding.locale_decode(msg.parse_error()[0])
             if missing_message and not mime:

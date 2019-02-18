@@ -345,6 +345,31 @@ class PlaybackController(object):
             self.set_state(PlaybackState.PAUSED)
             self._trigger_track_playback_paused()
 
+    def raiseValueIfBothAreSet(self, tl_track, tlid):
+        if sum(o is not None for o in [tl_track, tlid]) > 1:
+            raise ValueError('At most one of "tl_track" and "tlid" may be set')
+
+    def assertTrackIfExistOrResumePlayingIfPaused(self, tl_track):
+        if tl_track is not None:
+            # TODO: allow from outside tracklist, would make sense given refs?
+            assert tl_track in self.core.tracklist.get_tl_tracks()
+        elif tl_track is None and self.get_state() == PlaybackState.PAUSED:
+            self.resume()
+            return True
+
+    def loopWhilePendingExists(self, pending, count):
+        while pending:
+            if self._change(pending, PlaybackState.PLAYING):
+                break
+            else:
+                self.core.tracklist._mark_unplayable(pending)
+            current = pending
+            pending = self.core.tracklist.next_track(current)
+            count -= 1
+            if not count:
+                logger.info('No playable track in the list.')
+                break
+
     def play(self, tl_track=None, tlid=None):
         """
         Play the given track, or if the given tl_track and tlid is
@@ -357,8 +382,7 @@ class PlaybackController(object):
         :param tlid: TLID of the track to play
         :type tlid: :class:`int` or :class:`None`
         """
-        if sum(o is not None for o in [tl_track, tlid]) > 1:
-            raise ValueError('At most one of "tl_track" and "tlid" may be set')
+        self.raiseValueIfBothAreSet(tl_track, tlid)
 
         tl_track is None or validation.check_instance(tl_track, models.TlTrack)
         tlid is None or validation.check_integer(tlid, min=1)
@@ -373,11 +397,7 @@ class PlaybackController(object):
             else:
                 tl_track = None
 
-        if tl_track is not None:
-            # TODO: allow from outside tracklist, would make sense given refs?
-            assert tl_track in self.core.tracklist.get_tl_tracks()
-        elif tl_track is None and self.get_state() == PlaybackState.PAUSED:
-            self.resume()
+        if self.assertTrackIfExistOrResumePlayingIfPaused(tl_track):
             return
 
         current = self._pending_tl_track or self._current_tl_track
@@ -386,17 +406,7 @@ class PlaybackController(object):
         # * 2 -> second run to get all playable track in a shuffled playlist
         count = self.core.tracklist.get_length() * 2
 
-        while pending:
-            if self._change(pending, PlaybackState.PLAYING):
-                break
-            else:
-                self.core.tracklist._mark_unplayable(pending)
-            current = pending
-            pending = self.core.tracklist.next_track(current)
-            count -= 1
-            if not count:
-                logger.info('No playable track in the list.')
-                break
+        self.loopWhilePendingExists(pending, count)
 
         # TODO return result?
 
