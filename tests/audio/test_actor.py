@@ -7,6 +7,8 @@ import mock
 
 import pykka
 
+import pytest
+
 from mopidy import audio
 from mopidy.audio.constants import PlaybackState
 from mopidy.internal import path
@@ -17,6 +19,28 @@ from tests import dummy_audio, path_to_data_dir
 # We want to make sure both our real audio class and the fake one behave
 # correctly. So each test is first run against the real class, then repeated
 # against our dummy.
+
+
+@pytest.fixture(scope="session", autouse=True)
+def actor_branch_ficture():
+    print ('INITIALIZATION OF TEST_ACTOR')
+    yield
+    print ('TEAR DOWN - ALL TESTS DONE FOR TEST_ACTOR')
+    branches = audio.actor.branches_entered_on_message_function
+    print(branches)
+
+    # Print coverage
+    number_of_branches_in_function = audio.actor.number_of_branches_on_message_function
+    number_of_covered_in_function = branches.count(True)
+    print("Test coverage is %.2f%% " %(float(number_of_covered_in_function)/float(number_of_branches_in_function)))
+    
+    # Print which branches not covered
+    indices_of_branches_not_covered = []
+    for index, value in enumerate(branches):
+        if not value:
+            indices_of_branches_not_covered.append(index)
+    print("Branches not covered are")
+    print(indices_of_branches_not_covered)
 
 
 class BaseTest(unittest.TestCase):

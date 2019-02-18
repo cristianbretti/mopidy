@@ -14,6 +14,9 @@ from mopidy.internal import process
 from mopidy.internal.gi import GObject, Gst, GstPbutils
 
 
+number_of_branches_on_message_function = 11
+branches_entered_on_message_function = [False for i in range(number_of_branches_on_message_function)]
+
 logger = logging.getLogger(__name__)
 
 # This logger is only meant for debug logging of low level GStreamer info such
@@ -200,29 +203,40 @@ class _Handler(object):
 
     def on_message(self, bus, msg):
         if msg.type == Gst.MessageType.STATE_CHANGED:
+            branches_entered_on_message_function[0] = True
             if msg.src != self._element:
+                branches_entered_on_message_function[1] = True
                 return
             old_state, new_state, pending_state = msg.parse_state_changed()
             self.on_playbin_state_changed(old_state, new_state, pending_state)
         elif msg.type == Gst.MessageType.BUFFERING:
+            branches_entered_on_message_function[2] = True
             self.on_buffering(msg.parse_buffering(), msg.get_structure())
         elif msg.type == Gst.MessageType.EOS:
+            branches_entered_on_message_function[3] = True
             self.on_end_of_stream()
         elif msg.type == Gst.MessageType.ERROR:
+            branches_entered_on_message_function[4] = True
             error, debug = msg.parse_error()
             self.on_error(error, debug)
         elif msg.type == Gst.MessageType.WARNING:
+            branches_entered_on_message_function[5] = True
             error, debug = msg.parse_warning()
             self.on_warning(error, debug)
         elif msg.type == Gst.MessageType.ASYNC_DONE:
+            branches_entered_on_message_function[6] = True
             self.on_async_done()
         elif msg.type == Gst.MessageType.TAG:
+            branches_entered_on_message_function[7] = True
             taglist = msg.parse_tag()
             self.on_tag(taglist)
         elif msg.type == Gst.MessageType.ELEMENT:
+            branches_entered_on_message_function[8] = True
             if GstPbutils.is_missing_plugin_message(msg):
+                branches_entered_on_message_function[9] = True
                 self.on_missing_plugin(msg)
         elif msg.type == Gst.MessageType.STREAM_START:
+            branches_entered_on_message_function[10] = True
             self.on_stream_start()
 
     def on_pad_event(self, pad, pad_probe_info):
