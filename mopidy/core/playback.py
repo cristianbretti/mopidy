@@ -10,6 +10,9 @@ from mopidy.internal import deprecation, models, validation
 logger = logging.getLogger(__name__)
 
 
+number_of_branches_play_function = 21
+branches_entered_play_function = [False for i in range(number_of_branches_play_function)]
+
 class PlaybackController(object):
     pykka_traversable = True
 
@@ -357,37 +360,90 @@ class PlaybackController(object):
         :param tlid: TLID of the track to play
         :type tlid: :class:`int` or :class:`None`
         """
-        if sum(o is not None for o in [tl_track, tlid]) > 1:
-            raise ValueError('At most one of "tl_track" and "tlid" may be set')
+        branches_entered_play_function[0] = True
 
-        tl_track is None or validation.check_instance(tl_track, models.TlTrack)
-        tlid is None or validation.check_integer(tlid, min=1)
+        # if sum(o is not None for o in [tl_track, tlid]) > 1:
+        #     raise ValueError('At most one of "tl_track" and "tlid" may be set')
+        # REWRITEN BELOW
+        testsum = 0
+        for o in [tl_track, tlid]:
+            branches_entered_play_function[1] = True
+            if o is not None:
+                testsum = testsum + 1
+                branches_entered_play_function[2] = True
+        
+        if testsum > 1:
+            branches_entered_play_function[3] = True
+            raise ValueError('At most one of "tl_track" and "tlid" may be set')
+            
+
+        # tl_track is None or validation.check_instance(tl_track, models.TlTrack)
+        # REWRITEN BELOW
+        if tl_track is not None:
+            validation.check_instance(tl_track, models.TlTrack)
+            branches_entered_play_function[4] = True
+
+        # tlid is None or validation.check_integer(tlid, min=1)
+        # REWRITEN BELOW
+        if tlid is not None:
+            validation.check_integer(tlid, min=1)
+            branches_entered_play_function[5] = True
 
         if tl_track:
             deprecation.warn('core.playback.play:tl_track_kwarg', pending=True)
+            branches_entered_play_function[6] = True
 
-        if tl_track is None and tlid is not None:
-            for tl_track in self.core.tracklist.get_tl_tracks():
-                if tl_track.tlid == tlid:
-                    break
-            else:
-                tl_track = None
+        if tl_track is None: #and tlid is not None:
+            branches_entered_play_function[7] = True
+            if tlid is not None:
+                branches_entered_play_function[8] = True
+                for tl_track in self.core.tracklist.get_tl_tracks():
+                    branches_entered_play_function[9] = True
+                    if tl_track.tlid == tlid:
+                        branches_entered_play_function[10] = True
+                        break
+                else:
+                    branches_entered_play_function[11] = True
+                    tl_track = None
 
         if tl_track is not None:
             # TODO: allow from outside tracklist, would make sense given refs?
             assert tl_track in self.core.tracklist.get_tl_tracks()
-        elif tl_track is None and self.get_state() == PlaybackState.PAUSED:
-            self.resume()
-            return
+            branches_entered_play_function[12] = True
+        elif tl_track is None: #and self.get_state() == PlaybackState.PAUSED:
+            branches_entered_play_function[13] = True
+            if self.get_state() == PlaybackState.PAUSED:
+                self.resume()
+                branches_entered_play_function[14] = True
+                return
 
-        current = self._pending_tl_track or self._current_tl_track
-        pending = tl_track or current or self.core.tracklist.next_track(None)
+        # current = self._pending_tl_track or self._current_tl_track
+        # REWRITEN BELOW
+        if self._pending_tl_track:
+            current = self._pending_tl_track
+            branches_entered_play_function[15] = True
+        else:
+            current = self._current_tl_track
+
+        # pending = tl_track or current or self.core.tracklist.next_track(None)
+        # REWRITEN BELOW
+        if tl_track:
+            pending = tl_track
+            branches_entered_play_function[16] = True
+        elif current:
+            pending = current
+            branches_entered_play_function[17] = True
+        else:
+            pending = self.core.tracklist.next_track(None)
+
         # avoid endless loop if 'repeat' is 'true' and no track is playable
         # * 2 -> second run to get all playable track in a shuffled playlist
         count = self.core.tracklist.get_length() * 2
 
         while pending:
+            branches_entered_play_function[18] = True
             if self._change(pending, PlaybackState.PLAYING):
+                branches_entered_play_function[19] = True
                 break
             else:
                 self.core.tracklist._mark_unplayable(pending)
@@ -396,6 +452,7 @@ class PlaybackController(object):
             count -= 1
             if not count:
                 logger.info('No playable track in the list.')
+                branches_entered_play_function[20] = True
                 break
 
         # TODO return result?
