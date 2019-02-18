@@ -4,7 +4,7 @@ import unittest
 
 import mock
 
-from mopidy import backend, core
+from mopidy import backend, core, exceptions
 from mopidy.internal import deprecation
 from mopidy.internal.models import TracklistState
 from mopidy.models import TlTrack, Track
@@ -39,6 +39,33 @@ class TracklistTest(unittest.TestCase):
         self.core = core.Core(config, mixer=None, backends=[self.backend])
         self.tl_tracks = self.core.tracklist.add(uris=[
             t.uri for t in self.tracks])
+
+    # only one of `tracks`, `uri`, and `uris` should be set,
+    # otherwise, a ValueError should be raised
+    def test_add_raises_when_invalid_args(self):
+        with self.assertRaises(ValueError):
+            self.core.tracklist.add(None, None, None, None)
+
+        with self.assertRaises(ValueError):
+            self.core.tracklist.add(None, None, "dummy", ["dummy"])
+
+        with self.assertRaises(ValueError):
+            self.core.tracklist.add(["dummy"], None, None, ["dummy"])
+
+        with self.assertRaises(ValueError):
+            self.core.tracklist.add(["dummy"], None, "dummy", None)
+
+        with self.assertRaises(ValueError):
+            self.core.tracklist.add(["dummy"], None, "dummy", ["dummy"])
+
+    # A TracklistFull exception must be raised when trying to
+    # add more than the allowed number of tracks.
+    def test_add_raises_when_over_max_length(self):
+        self.core.tracklist.get_length = mock.Mock()
+        self.core.tracklist.get_length.return_value = 10001
+
+        with self.assertRaises(exceptions.TracklistFull):
+            self.core.tracklist.add(None, None, "dummy1:a", None)
 
     def test_add_by_uri_looks_up_uri_in_library(self):
         self.library.lookup.reset_mock()
