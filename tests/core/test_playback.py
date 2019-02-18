@@ -115,8 +115,48 @@ class BaseTest(object):
         callback()
         self.replay_events(until=replay_until)
 
+class TestChange(BaseTest):
+
+    #If the state passed in is a state non-existing. A exception should be raised
+    def test_change_with_wrong_state(self):
+        #Need to have something playing first
+        tl_tracks = self.core.tracklist.get_tl_tracks()
+        self.core.playback.play(tl_tracks[0])
+
+        #Now get the pending track and call _change to get the exception
+        pending = self.core.tracklist.next_track(tl_tracks[0])
+        state = 'bad-state'
+        with pytest.raises(Exception):
+            self.core.playback._change(pending, state)
+
+
+class TestOnPositionChangePause(BaseTest):
+    #Calling _on_position_changed with _start_paused set to True
+    #should set the state to PAUSED
+    def test_on_position_change_with_pause(self):
+        self.core.playback._pending_position = 1
+        self.core.playback._start_paused = True
+        self.core.playback._on_position_changed(2)
+
+        assert self.core.playback.state == core.PlaybackState.PAUSED
+    
+    #Calling _on_position_changed with _start_paused set to False
+    #should NOT set the state to PAUSED
+    def test_on_position_change_without_pause(self):
+        self.core.playback._pending_position = 1
+        self.core.playback._start_paused = False
+        self.core.playback._on_position_changed(2)
+
+        assert self.core.playback.state != core.PlaybackState.PAUSED
 
 class TestPlayHandling(BaseTest):
+
+    #Both parameters of play() set to values should resolve in a exception
+    def test_tl_track_and_tlid_not_none_play(self):
+        tl_tracks = self.core.tracklist.get_tl_tracks()
+
+        with pytest.raises(ValueError):
+            self.core.playback.play(tl_tracks[0], 0)
 
     def test_get_current_tl_track_play(self):
         tl_tracks = self.core.tracklist.get_tl_tracks()

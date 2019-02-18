@@ -6,8 +6,10 @@ import mock
 
 from mopidy.models import Album, Artist, Playlist, Ref, SearchResult, Track
 from mopidy.mpd.protocol import music_db, stored_playlists
+from mopidy.mpd import exceptions
 
 from tests.mpd import protocol
+import pytest
 
 # TODO: split into more modules for faster parallel tests?
 
@@ -648,6 +650,12 @@ class MusicDatabaseFindTest(protocol.BaseTestCase):
 
 
 class MusicDatabaseListTest(protocol.BaseTestCase):
+
+    #Having no arguments to list() should also respond
+    # in the "incorrect arguments" response
+    def test_list_without_context(self):
+        self.send_request('list ')
+        self.assertInResponse('ACK [2@0] {list} incorrect arguments')
 
     def test_list(self):
         self.backend.library.dummy_get_distinct_result = {
