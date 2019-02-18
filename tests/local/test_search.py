@@ -5,10 +5,6 @@ from mopidy.local import search
 from mopidy.models import Album, Track
 
 import pytest 
-@pytest.fixture(scope="session",autouse=True)
-def my_fixture():
-	print("/////FIND_EXACT COVERAGE : " + str(100*sum(search.FindExact_Cov)/len(search.FindExact_Cov))+"%/////")
-	print("/////SEARCH COVERAGE : " + str(100*sum(search.Search_Cov)/len(search.Search_Cov))+"%/////")
 class LocalLibrarySearchTest(unittest.TestCase):
 	
 
