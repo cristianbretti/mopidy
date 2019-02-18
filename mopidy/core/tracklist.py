@@ -343,11 +343,6 @@ class TracklistController(object):
                 self._shuffled = self._tl_tracks[:]
                 random.shuffle(self._shuffled)
 
-        if self.get_random():
-            if self._shuffled:
-                return self._shuffled[0]
-            return None
-
     def get_previous_tlid(self):
         """
         Returns the TLID of the track that will be played if calling
