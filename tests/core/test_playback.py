@@ -14,6 +14,27 @@ from mopidy.models import Track
 from tests import dummy_audio
 
 
+@pytest.fixture(scope="session", autouse=True)
+def play_back_branch_ficture():
+    print ('INITIALIZATION OF TEST_PLAYBACK')
+    yield
+    print ('TEAR DOWN - ALL TESTS DONE FOR TEST_PLAYBACK')
+    branches = core.playback.branches_entered_play_function
+    print(branches)
+
+    # Print coverage
+    number_of_branches_in_function = core.playback.number_of_branches_play_function
+    number_of_covered_in_function= branches.count(True)
+    print("Test coverage is %.2f%% " %(float(number_of_covered_in_function)/float(number_of_branches_in_function)))
+    
+    # Print which branches not covered
+    indices_of_branches_not_covered = []
+    for index, value in enumerate(branches):
+        if not value:
+            indices_of_branches_not_covered.append(index)
+    print("Branches not covered are")
+    print(indices_of_branches_not_covered)
+
 class MyTestPlaybackProvider(backend.PlaybackProvider):
 
     def __init__(self, audio, backend):
