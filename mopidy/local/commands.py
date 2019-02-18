@@ -55,6 +55,7 @@ class ClearCommand(commands.Command):
 
         print('Unable to clear library.')
         return 1
+#This for loop for detecting correct absolute path for the track and used for update the library with track uri
 def forLoops1(track,library,media_dir,args,uris_to_remove,file_mtimes):
     for track in library.begin():
         abspath = translator.local_track_uri_to_path(track.uri, media_dir)
@@ -71,7 +72,7 @@ def forLoops1(track,library,media_dir,args,uris_to_remove,file_mtimes):
         library.remove(uri)
 
     return library
-
+#This for loop for convert absolute path to relative path and translate it to uri
 def forLoops2(track,library,media_dir,args,uris_to_remove,file_mtimes):
     for abspath in file_mtimes:
         relpath = os.path.relpath(abspath, media_dir)
@@ -96,6 +97,7 @@ def forLoops2(track,library,media_dir,args,uris_to_remove,file_mtimes):
 
     return library
 
+#This for loop is for taking the uri and convert it to track to store in the library
 def forLoops3(track,library,media_dir,args,uris_to_remove,file_mtimes):
 
     for uri in uris_to_update:
