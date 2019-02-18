@@ -2,7 +2,7 @@ from __future__ import absolute_import, unicode_literals
 
 from mopidy.models import SearchResult
 
-
+FindExact_Cov = [False]*18
 def find_exact(tracks, query=None, limit=100, offset=0, uris=None):
     """
     Filter a list of tracks where ``field`` is ``values``.
@@ -16,18 +16,22 @@ def find_exact(tracks, query=None, limit=100, offset=0, uris=None):
     :rtype: :class:`~mopidy.models.SearchResult`
     """
     # TODO Only return results within URI roots given by ``uris``
-
+    FindExact_Cov[0] = True
     if query is None:
+	FindExact_Cov[1] = True
         query = {}
 
     _validate_query(query)
 
     for (field, values) in query.items():
         # FIXME this is bound to be slow for large libraries
+	FindExact_Cov[2] = True
         for value in values:
+    	    FindExact_Cov[3] = True
             if field == 'track_no':
                 q = _convert_to_int(value)
             else:
+		FindExact_Cov[4] = True
                 q = value.strip()
 
             def uri_filter(t):
@@ -80,33 +84,46 @@ def find_exact(tracks, query=None, limit=100, offset=0, uris=None):
             if field == 'uri':
                 tracks = filter(uri_filter, tracks)
             elif field == 'track_name':
+                FindExact_Cov[5] = True;
                 tracks = filter(track_name_filter, tracks)
             elif field == 'album':
+                FindExact_Cov[6] = True;
                 tracks = filter(album_filter, tracks)
             elif field == 'artist':
+                FindExact_Cov[7] = True;
                 tracks = filter(artist_filter, tracks)
             elif field == 'albumartist':
+                FindExact_Cov[8] = True;
                 tracks = filter(albumartist_filter, tracks)
             elif field == 'composer':
+                FindExact_Cov[9] = True;
                 tracks = filter(composer_filter, tracks)
             elif field == 'performer':
+                FindExact_Cov[10] = True;
                 tracks = filter(performer_filter, tracks)
             elif field == 'track_no':
+                FindExact_Cov[11] = True;
                 tracks = filter(track_no_filter, tracks)
             elif field == 'genre':
+                FindExact_Cov[12] = True;
                 tracks = filter(genre_filter, tracks)
             elif field == 'date':
+                FindExact_Cov[13] = True;
                 tracks = filter(date_filter, tracks)
             elif field == 'comment':
+                FindExact_Cov[14] = True;
                 tracks = filter(comment_filter, tracks)
             elif field == 'any':
+                FindExact_Cov[15] = True;
                 tracks = filter(any_filter, tracks)
             else:
+                FindExact_Cov[16] = True;
                 raise LookupError('Invalid lookup field: %s' % field)
 
     if limit is None:
         tracks = tracks[offset:]
     else:
+        FindExact_Cov[17] = True;
         tracks = tracks[offset:offset + limit]
     # TODO: add local:search:<query>
     return SearchResult(uri='local:search', tracks=tracks)
@@ -125,7 +142,6 @@ def search(tracks, query=None, limit=100, offset=0, uris=None):
     :rtype: :class:`~mopidy.models.SearchResult`
     """
     # TODO Only return results within URI roots given by ``uris``
-
     if query is None:
         query = {}
 
