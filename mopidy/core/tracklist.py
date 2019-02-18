@@ -308,22 +308,14 @@ class TracklistController(object):
         if not self._tl_tracks:
             return None
 
-        if self.get_random() and not self._shuffled:
-            if self.get_repeat() or not tl_track:
-                logger.debug('Shuffling tracks')
-                self._shuffled = self._tl_tracks[:]
-                random.shuffle(self._shuffled)
+        self.shuffle_if_needed(tl_track)
 
         if self.get_random():
             if self._shuffled:
                 return self._shuffled[0]
             return None
 
-        next_index = self.index(tl_track)
-        if next_index is None:
-            next_index = 0
-        else:
-            next_index += 1
+        next_index = self.set_next_index(tl_track)
 
         if self.get_repeat():
             if self.get_consume() and len(self._tl_tracks) == 1:
@@ -334,6 +326,22 @@ class TracklistController(object):
             return None
 
         return self._tl_tracks[next_index]
+    
+    def set_next_index(self, tl_track):
+        next_index = self.index(tl_track)
+        if next_index is None:
+            next_index = 0
+        else:
+            next_index += 1
+        return next_index
+
+    def shuffle_if_needed(self, tl_track):
+        tl_track is None or validation.check_instance(tl_track, TlTrack)
+        if self.get_random() and not self._shuffled:
+            if self.get_repeat() or not tl_track:
+                logger.debug('Shuffling tracks')
+                self._shuffled = self._tl_tracks[:]
+                random.shuffle(self._shuffled)
 
     def get_previous_tlid(self):
         """
