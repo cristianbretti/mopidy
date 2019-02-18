@@ -302,35 +302,132 @@ class TracklistController(object):
         :type tl_track: :class:`mopidy.models.TlTrack` or :class:`None`
         :rtype: :class:`mopidy.models.TlTrack` or :class:`None`
         """
+        print('NEXT TRACK TEST: entered branch 1')
         deprecation.warn('core.tracklist.next_track', pending=True)
-        tl_track is None or validation.check_instance(tl_track, TlTrack)
+        
+        # tl_track is None or validation.check_instance(tl_track, TlTrack)
+        if tl_track is not None:
+            print('NEXT TRACK TEST: entered branch 2')
+            validation.check_instance(tl_track, TlTrack)
 
         if not self._tl_tracks:
+            print('NEXT TRACK TEST: entered branch 3')
             return None
 
-        if self.get_random() and not self._shuffled:
-            if self.get_repeat() or not tl_track:
-                logger.debug('Shuffling tracks')
-                self._shuffled = self._tl_tracks[:]
-                random.shuffle(self._shuffled)
+        # if self.get_random() and not self._shuffled:
+        #     print('NEXT TRACK TEST: entered branch 3')
+        #     if self.get_repeat() or not tl_track:
+        #         print('NEXT TRACK TEST: entered branch 4')
+        #         logger.debug('Shuffling tracks')
+        #         self._shuffled = self._tl_tracks[:]
+        #         random.shuffle(self._shuffled)
+        if self.get_random():
+            print('NEXT TRACK TEST: entered branch 4')
+            if not self._shuffled:
+                print('NEXT TRACK TEST: entered branch 5')
+                if self.get_repeat():
+                    print('NEXT TRACK TEST: entered branch 6')
+                    logger.debug('Shuffling tracks')
+                    self._shuffled = self._tl_tracks[:]
+                    random.shuffle(self._shuffled)
+                elif not tl_track:
+                    print('NEXT TRACK TEST: entered branch 7')
+                    logger.debug('Shuffling tracks')
+                    self._shuffled = self._tl_tracks[:]
+                    random.shuffle(self._shuffled)
 
         if self.get_random():
+            print('NEXT TRACK TEST: entered branch 8')
             if self._shuffled:
+                print('NEXT TRACK TEST: entered branch 9')
                 return self._shuffled[0]
             return None
 
         next_index = self.index(tl_track)
         if next_index is None:
+            print('NEXT TRACK TEST: entered branch 10')
+            next_index = 0
+        else:
+            next_index += 1
+
+        # if self.get_repeat():
+        #     print('NEXT TRACK TEST: entered branch 8')
+        #     if self.get_consume() and len(self._tl_tracks) == 1:
+        #         print('NEXT TRACK TEST: entered branch 9')
+        #         return None
+        #     else:
+        #         next_index %= len(self._tl_tracks)
+        # elif next_index >= len(self._tl_tracks):
+        #     print('NEXT TRACK TEST: entered branch 10')
+        #     return None
+        if self.get_repeat():
+            print('NEXT TRACK TEST: entered branch 11')
+            if self.get_consume():
+                print('NEXT TRACK TEST: entered branch 12')
+                if len(self._tl_tracks) == 1:
+                    print('NEXT TRACK TEST: entered branch 13')
+                    return None
+            else:
+                next_index %= len(self._tl_tracks)
+        elif next_index >= len(self._tl_tracks):
+            print('NEXT TRACK TEST: entered branch 14')
+            return None
+
+        return self._tl_tracks[next_index]
+
+    def next_track_DEP(self, tl_track):
+        """
+        The track that will be played if calling
+        :meth:`mopidy.core.PlaybackController.next()`.
+
+        For normal playback this is the next track in the tracklist. If repeat
+        is enabled the next track can loop around the tracklist. When random is
+        enabled this should be a random track, all tracks should be played once
+        before the tracklist repeats.
+
+        :param tl_track: the reference track
+        :type tl_track: :class:`mopidy.models.TlTrack` or :class:`None`
+        :rtype: :class:`mopidy.models.TlTrack` or :class:`None`
+        """
+        print('NEXT TRACK TEST: entered branch 1')
+        deprecation.warn('core.tracklist.next_track', pending=True)
+        tl_track is None or validation.check_instance(tl_track, TlTrack)
+
+        if not self._tl_tracks:
+            print('NEXT TRACK TEST: entered branch 2')
+            return None
+
+        if self.get_random() and not self._shuffled:
+            print('NEXT TRACK TEST: entered branch 3')
+            if self.get_repeat() or not tl_track:
+                print('NEXT TRACK TEST: entered branch 4')
+                logger.debug('Shuffling tracks')
+                self._shuffled = self._tl_tracks[:]
+                random.shuffle(self._shuffled)
+
+        if self.get_random():
+            print('NEXT TRACK TEST: entered branch 5')
+            if self._shuffled:
+                print('NEXT TRACK TEST: entered branch 6')
+                return self._shuffled[0]
+            return None
+
+        next_index = self.index(tl_track)
+        if next_index is None:
+            print('NEXT TRACK TEST: entered branch 7')
             next_index = 0
         else:
             next_index += 1
 
         if self.get_repeat():
+            print('NEXT TRACK TEST: entered branch 8')
             if self.get_consume() and len(self._tl_tracks) == 1:
+                print('NEXT TRACK TEST: entered branch 9')
                 return None
             else:
                 next_index %= len(self._tl_tracks)
         elif next_index >= len(self._tl_tracks):
+            print('NEXT TRACK TEST: entered branch 10')
             return None
 
         return self._tl_tracks[next_index]
