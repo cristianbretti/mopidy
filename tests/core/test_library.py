@@ -4,10 +4,21 @@ import unittest
 
 import mock
 
+
 from mopidy import backend, core
 from mopidy.internal import deprecation
 from mopidy.models import Image, Ref, SearchResult, Track
 
+import pytest
+@pytest.fixture(scope="session", autouse=True)
+def my_fixture():
+    print('INITIALIZATION')
+    yield
+    print('TEAR DOWN')
+    print(len(core.library.lookupBranches))
+    print(core.library.lookupBranches)
+    lookupCoverage = sum(core.library.lookupBranches) / len(core.library.lookupBranches) * 100
+    print("lookup coverage: " + str(lookupCoverage) + "%")
 
 class BaseCoreLibraryTest(unittest.TestCase):
 

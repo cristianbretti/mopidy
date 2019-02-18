@@ -27,6 +27,9 @@ def _backend_error_handling(backend, reraise=None):
                          backend.actor_ref.actor_class.__name__)
 
 
+lookupBranches = [False] * 16
+
+
 class LibraryController(object):
     pykka_traversable = True
 
@@ -211,37 +214,70 @@ class LibraryController(object):
         .. deprecated:: 1.0
             The ``uri`` argument. Use ``uris`` instead.
         """
-        if sum(o is not None for o in [uri, uris]) != 1:
+        # if sum(o is not None for o in [uri, uris]) != 1:
+        #    raise ValueError('Exactly one of "uri" or "uris" must be set')
+        sum = 0
+        for o in [uri, uris]:
+            lookupBranches[0] = True
+            if o is not None:
+                lookupBranches[1] = True
+                sum += 1
+
+        if sum != 1:
+            lookupBranches[2] = True
             raise ValueError('Exactly one of "uri" or "uris" must be set')
 
-        uris is None or validation.check_uris(uris)
-        uri is None or validation.check_uri(uri)
+        # uris is None or validation.check_uris(uris)
+        if uris is not None:
+            lookupBranches[3] = True
+            validation.check_uris(uris)
+        #uri is None or validation.check_uri(uri)
+        if uri is not None:
+            lookupBranches[4] = True
+            validation.check_uri(uri)
 
         if uri:
+            lookupBranches[5] = True
             deprecation.warn('core.library.lookup:uri_arg')
 
         if uri is not None:
+            lookupBranches[6] = True
             uris = [uri]
 
         futures = {}
-        results = {u: [] for u in uris}
+        #results = {u: [] for u in uris}
+        results = {}
+        for u in uris:
+            lookupBranches[7] = True
+            results[u] = []
 
         # TODO: lookup(uris) to backend APIs
         for backend, backend_uris in self._get_backends_to_uris(uris).items():
+            lookupBranches[8] = True
             if backend_uris:
+                lookupBranches[9] = True
                 for u in backend_uris:
+                    lookupBranches[10] = True
                     futures[(backend, u)] = backend.library.lookup(u)
 
         for (backend, u), future in futures.items():
+            lookupBranches[11] = True
             with _backend_error_handling(backend):
                 result = future.get()
                 if result is not None:
+                    lookupBranches[12] = True
                     validation.check_instances(result, models.Track)
                     # TODO Consider making Track.uri field mandatory, and
                     # then remove this filtering of tracks without URIs.
-                    results[u] = [r for r in result if r.uri]
+                    #results[u] = [r for r in result if r.uri]
+                    for r in result:
+                        lookupBranches[13] = True
+                        if r.uri:
+                            lookupBranches[14] = True
+                            results[u] += [r]
 
         if uri:
+            lookupBranches[15] = True
             return results[uri]
         return results
 
