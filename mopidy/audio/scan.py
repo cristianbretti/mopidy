@@ -185,8 +185,9 @@ def _query_seekable(pipeline):
     pipeline.query(query)
     return query.parse_seeking()[1]
 
-
+#UNRAVELED
 def _process(pipeline, timeout_ms):
+    print('PROCESS TEST: entered branch 1')
     bus = pipeline.get_bus()
     tags = {}
     mime = None
@@ -207,43 +208,69 @@ def _process(pipeline, timeout_ms):
     timeout = timeout_ms
     start = int(time.time() * 1000)
     while timeout > 0:
+        print('PROCESS TEST: entered branch 2')
         msg = bus.timed_pop_filtered(timeout * Gst.MSECOND, types)
         if msg is None:
+            print('PROCESS TEST: entered branch 3')
             break
 
-        if logger.isEnabledFor(log.TRACE_LOG_LEVEL) and msg.get_structure():
-            debug_text = msg.get_structure().to_string()
-            if len(debug_text) > 77:
-                debug_text = debug_text[:77] + '...'
-            _trace('element %s: %s', msg.src.get_name(), debug_text)
+        if logger.isEnabledFor(log.TRACE_LOG_LEVEL):
+            print('PROCESS TEST: entered branch 4')
+            if msg.get_structure():
+                print('PROCESS TEST: entered branch 5')
+                debug_text = msg.get_structure().to_string()
+                if len(debug_text) > 77:
+                    print('PROCESS TEST: entered branch 6')
+                    debug_text = debug_text[:77] + '...'
+                _trace('element %s: %s', msg.src.get_name(), debug_text)
 
         if msg.type == Gst.MessageType.ELEMENT:
+            print('PROCESS TEST: entered branch 7')
             if GstPbutils.is_missing_plugin_message(msg):
+                print('PROCESS TEST: entered branch 8')
                 missing_message = msg
         elif msg.type == Gst.MessageType.APPLICATION:
+            print('PROCESS TEST: entered branch 9')
             if msg.get_structure().get_name() == 'have-type':
+                print('PROCESS TEST: entered branch 10')
                 mime = msg.get_structure().get_value('caps').get_name()
-                if mime and (
-                        mime.startswith('text/') or mime == 'application/xml'):
-                    return tags, mime, have_audio, duration
+                if mime:
+                    print('PROCESS TEST: entered branch 11')
+                    if mime.startswith('text/'):
+                        print('PROCESS TEST: entered branch 12')
+                        return tags, mime, have_audio, duration
+                    elif mime == 'application/xml':
+                        print('PROCESS TEST: entered branch 13')
+                        return tags, mime, have_audio, duration
             elif msg.get_structure().get_name() == 'have-audio':
+                print('PROCESS TEST: entered branch 14')
                 have_audio = True
         elif msg.type == Gst.MessageType.ERROR:
+            print('PROCESS TEST: entered branch 15')
             error = encoding.locale_decode(msg.parse_error()[0])
-            if missing_message and not mime:
-                caps = missing_message.get_structure().get_value('detail')
-                mime = caps.get_structure(0).get_name()
-                return tags, mime, have_audio, duration
+            if missing_message:
+                print('PROCESS TEST: entered branch 16')
+                if not mime:
+                    print('PROCESS TEST: entered branch 17')
+                    caps = missing_message.get_structure().get_value('detail')
+                    mime = caps.get_structure(0).get_name()
+                    return tags, mime, have_audio, duration
             raise exceptions.ScannerError(error)
         elif msg.type == Gst.MessageType.EOS:
+            print('PROCESS TEST: entered branch 18')
             return tags, mime, have_audio, duration
         elif msg.type == Gst.MessageType.ASYNC_DONE:
+            print('PROCESS TEST: entered branch 19')
             success, duration = _query_duration(pipeline)
-            if tags and success:
-                return tags, mime, have_audio, duration
+            if tags:
+                print('PROCESS TEST: entered branch 20')
+                if success:
+                    print('PROCESS TEST: entered branch 21')
+                    return tags, mime, have_audio, duration
 
             # Don't try workaround for non-seekable sources such as mmssrc:
             if not _query_seekable(pipeline):
+                print('PROCESS TEST: entered branch 22')
                 return tags, mime, have_audio, duration
 
             # Workaround for upstream bug which causes tags/duration to arrive
@@ -253,16 +280,22 @@ def _process(pipeline, timeout_ms):
             logger.debug('Using workaround for duration missing before play.')
             result = pipeline.set_state(Gst.State.PLAYING)
             if result == Gst.StateChangeReturn.FAILURE:
+                print('PROCESS TEST: entered branch 23')
                 return tags, mime, have_audio, duration
 
-        elif msg.type == Gst.MessageType.DURATION_CHANGED and tags:
-            # VBR formats sometimes seem to not have a duration by the time we
-            # go back to paused. So just try to get it right away.
-            success, duration = _query_duration(pipeline)
-            pipeline.set_state(Gst.State.PAUSED)
-            if success:
-                return tags, mime, have_audio, duration
+        elif msg.type == Gst.MessageType.DURATION_CHANGED:
+            print('PROCESS TEST: entered branch 24')
+            if tags:
+                print('PROCESS TEST: entered branch 25')
+                # VBR formats sometimes seem to not have a duration by the time we
+                # go back to paused. So just try to get it right away.
+                success, duration = _query_duration(pipeline)
+                pipeline.set_state(Gst.State.PAUSED)
+                if success:
+                    print('PROCESS TEST: entered branch 26')
+                    return tags, mime, have_audio, duration
         elif msg.type == Gst.MessageType.TAG:
+            print('PROCESS TEST: entered branch 27')
             taglist = msg.parse_tag()
             # Note that this will only keep the last tag.
             tags.update(tags_lib.convert_taglist(taglist))
@@ -271,6 +304,111 @@ def _process(pipeline, timeout_ms):
 
     raise exceptions.ScannerError('Timeout after %dms' % timeout_ms)
 
+def _processUNACTIVATED(pipeline, timeout_ms):
+    print('PROCESS TEST: entered branch 1')
+    bus = pipeline.get_bus()
+    tags = {}
+    mime = None
+    have_audio = False
+    missing_message = None
+    duration = None
+
+    types = (
+        Gst.MessageType.ELEMENT |
+        Gst.MessageType.APPLICATION |
+        Gst.MessageType.ERROR |
+        Gst.MessageType.EOS |
+        Gst.MessageType.ASYNC_DONE |
+        Gst.MessageType.DURATION_CHANGED |
+        Gst.MessageType.TAG
+    )
+
+    timeout = timeout_ms
+    start = int(time.time() * 1000)
+    while timeout > 0:
+        print('PROCESS TEST: entered branch 2')
+        msg = bus.timed_pop_filtered(timeout * Gst.MSECOND, types)
+        if msg is None:
+            print('PROCESS TEST: entered branch 3')
+            break
+
+        if logger.isEnabledFor(log.TRACE_LOG_LEVEL) and msg.get_structure():
+            print('PROCESS TEST: entered branch 4')
+            debug_text = msg.get_structure().to_string()
+            if len(debug_text) > 77:
+                print('PROCESS TEST: entered branch 5')
+                debug_text = debug_text[:77] + '...'
+            _trace('element %s: %s', msg.src.get_name(), debug_text)
+
+        if msg.type == Gst.MessageType.ELEMENT:
+            print('PROCESS TEST: entered branch 6')
+            if GstPbutils.is_missing_plugin_message(msg):
+                print('PROCESS TEST: entered branch 7')
+                missing_message = msg
+        elif msg.type == Gst.MessageType.APPLICATION:
+            print('PROCESS TEST: entered branch 8')
+            if msg.get_structure().get_name() == 'have-type':
+                print('PROCESS TEST: entered branch 9')
+                mime = msg.get_structure().get_value('caps').get_name()
+                if mime and (
+                        mime.startswith('text/') or mime == 'application/xml'):
+                    print('PROCESS TEST: entered branch 10')
+                    return tags, mime, have_audio, duration
+            elif msg.get_structure().get_name() == 'have-audio':
+                print('PROCESS TEST: entered branch 11')
+                have_audio = True
+        elif msg.type == Gst.MessageType.ERROR:
+            print('PROCESS TEST: entered branch 12')
+            error = encoding.locale_decode(msg.parse_error()[0])
+            if missing_message and not mime:
+                print('PROCESS TEST: entered branch 13')
+                caps = missing_message.get_structure().get_value('detail')
+                mime = caps.get_structure(0).get_name()
+                return tags, mime, have_audio, duration
+            raise exceptions.ScannerError(error)
+        elif msg.type == Gst.MessageType.EOS:
+            print('PROCESS TEST: entered branch 14')
+            return tags, mime, have_audio, duration
+        elif msg.type == Gst.MessageType.ASYNC_DONE:
+            print('PROCESS TEST: entered branch 15')
+            success, duration = _query_duration(pipeline)
+            if tags and success:
+                print('PROCESS TEST: entered branch 16')
+                return tags, mime, have_audio, duration
+
+            # Don't try workaround for non-seekable sources such as mmssrc:
+            if not _query_seekable(pipeline):
+                print('PROCESS TEST: entered branch 17')
+                return tags, mime, have_audio, duration
+
+            # Workaround for upstream bug which causes tags/duration to arrive
+            # after pre-roll. We get around this by starting to play the track
+            # and then waiting for a duration change.
+            # https://bugzilla.gnome.org/show_bug.cgi?id=763553
+            logger.debug('Using workaround for duration missing before play.')
+            result = pipeline.set_state(Gst.State.PLAYING)
+            if result == Gst.StateChangeReturn.FAILURE:
+                print('PROCESS TEST: entered branch 18')
+                return tags, mime, have_audio, duration
+
+        elif msg.type == Gst.MessageType.DURATION_CHANGED and tags:
+            print('PROCESS TEST: entered branch 19')
+            # VBR formats sometimes seem to not have a duration by the time we
+            # go back to paused. So just try to get it right away.
+            success, duration = _query_duration(pipeline)
+            pipeline.set_state(Gst.State.PAUSED)
+            if success:
+                print('PROCESS TEST: entered branch 20')
+                return tags, mime, have_audio, duration
+        elif msg.type == Gst.MessageType.TAG:
+            print('PROCESS TEST: entered branch 21')
+            taglist = msg.parse_tag()
+            # Note that this will only keep the last tag.
+            tags.update(tags_lib.convert_taglist(taglist))
+
+        timeout = timeout_ms - (int(time.time() * 1000) - start)
+
+    raise exceptions.ScannerError('Timeout after %dms' % timeout_ms)
 
 if __name__ == '__main__':
     import os
