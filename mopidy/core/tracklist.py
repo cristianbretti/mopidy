@@ -308,7 +308,7 @@ class TracklistController(object):
         if not self._tl_tracks:
             return None
 
-        handleIfRandom()
+        self.handleIfRandom(tl_track)
         # if self.get_random() and not self._shuffled:
         #     if self.get_repeat() or not tl_track:
         #         logger.debug('Shuffling tracks')
@@ -336,7 +336,7 @@ class TracklistController(object):
 
         return self._tl_tracks[next_index]
     
-    def handleIfRandom():
+    def handleIfRandom(self, tl_track):
         if self.get_random() and not self._shuffled:
             if self.get_repeat() or not tl_track:
                 logger.debug('Shuffling tracks')
