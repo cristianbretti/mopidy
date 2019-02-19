@@ -77,30 +77,9 @@ def find_exact(tracks, query=None, limit=100, offset=0, uris=None):
                         date_filter(t) or
                         comment_filter(t))
 
-            if field == 'uri':
-                tracks = filter(uri_filter, tracks)
-            elif field == 'track_name':
-                tracks = filter(track_name_filter, tracks)
-            elif field == 'album':
-                tracks = filter(album_filter, tracks)
-            elif field == 'artist':
-                tracks = filter(artist_filter, tracks)
-            elif field == 'albumartist':
-                tracks = filter(albumartist_filter, tracks)
-            elif field == 'composer':
-                tracks = filter(composer_filter, tracks)
-            elif field == 'performer':
-                tracks = filter(performer_filter, tracks)
-            elif field == 'track_no':
-                tracks = filter(track_no_filter, tracks)
-            elif field == 'genre':
-                tracks = filter(genre_filter, tracks)
-            elif field == 'date':
-                tracks = filter(date_filter, tracks)
-            elif field == 'comment':
-                tracks = filter(comment_filter, tracks)
-            elif field == 'any':
-                tracks = filter(any_filter, tracks)
+            dict = {'uri':'filter(uri_filter, tracks)','track_name':'filter(track_name_filter, tracks)','album':'filter(album_filter, tracks)','artist':'filter(artist_filter, tracks)','albumartist':'filter(albumartist_filter, tracks)','composer':'filter(composer_filter, tracks)','performer':'filter(performer_filter, tracks)','track_no':'filter(track_no_filter, tracks)','genre':'filter(genre_filter, tracks)','date':'filter(date_filter, tracks)','comment':'filter(comment_filter, tracks)','any':'filter(any_filter, tracks)'}
+            if field in dict:
+                tracks = eval(dict[field])
             else:
                 raise LookupError('Invalid lookup field: %s' % field)
 
