@@ -210,20 +210,14 @@ def _process(pipeline, timeout_ms):
         if msg is None:
             break
 
-        if logger.isEnabledFor(log.TRACE_LOG_LEVEL) and msg.get_structure():
-            debug_text = msg.get_structure().to_string()
-            if len(debug_text) > 77:
-                debug_text = debug_text[:77] + '...'
-            _trace('element %s: %s', msg.src.get_name(), debug_text)
+        debug_text = setDebugText(msg)
 
         if msg.type == Gst.MessageType.ELEMENT:
-            if GstPbutils.is_missing_plugin_message(msg):
-                missing_message = msg
+            missing_message = message_is_element(msg)
         elif msg.type == Gst.MessageType.APPLICATION:
             if msg.get_structure().get_name() == 'have-type':
                 mime = msg.get_structure().get_value('caps').get_name()
-                if mime and (
-                        mime.startswith('text/') or mime == 'application/xml'):
+                if mime_check(mime):
                     return tags, mime, have_audio, duration
             elif msg.get_structure().get_name() == 'have-audio':
                 have_audio = True            
@@ -237,22 +231,8 @@ def _process(pipeline, timeout_ms):
         elif msg.type == Gst.MessageType.EOS:
             return tags, mime, have_audio, duration
         elif msg.type == Gst.MessageType.ASYNC_DONE:
-            success, duration = _query_duration(pipeline)
-            if tags and success:
-                return tags, mime, have_audio, duration
-
-            # Don't try workaround for non-seekable sources such as mmssrc:
-            if not _query_seekable(pipeline):
-                return tags, mime, have_audio, duration
-
-            # Workaround for upstream bug which causes tags/duration to arrive
-            # after pre-roll. We get around this by starting to play the track
-            # and then waiting for a duration change.
-            # https://bugzilla.gnome.org/show_bug.cgi?id=763553
-            logger.debug('Using workaround for duration missing before play.')
-            result = pipeline.set_state(Gst.State.PLAYING)
-            if result == Gst.StateChangeReturn.FAILURE:
-                return tags, mime, have_audio, duration
+            tags, mime, have_audio, duration = message_is_async_done(pipeline, tags, mime, have_audio)
+            return tags, mime, have_audio, duration
         elif msg.type == Gst.MessageType.DURATION_CHANGED and tags:
             # VBR formats sometimes seem to not have a duration by the time we
             # go back to paused. So just try to get it right away.
@@ -269,6 +249,55 @@ def _process(pipeline, timeout_ms):
 
     raise exceptions.ScannerError('Timeout after %dms' % timeout_ms)
 
+def mime_check(mime):
+    if mime and (
+        mime.startswith('text/') or mime == 'application/xml'):
+        return True
+    return False
+
+def message_is_element(msg):
+    if GstPbutils.is_missing_plugin_message(msg):
+        missing_message = msg
+        return missing_message
+    return ""
+
+def message_is_application(tags, mime, have_audio, duration, msg):
+    if msg.get_structure().get_name() == 'have-type':
+        mimeNew = msg.get_structure().get_value('caps').get_name()
+        if mimeNew and (
+                mimeNew.startswith('text/') or mimeNew == 'application/xml'):
+            mime = mimeNew
+            return tags, mime, have_audio, duration
+    elif msg.get_structure().get_name() == 'have-audio':
+        have_audio = True
+    return tags, mime, have_audio, duration
+
+def message_is_async_done(pipeline, tags, mime, have_audio):
+    success, duration = _query_duration(pipeline)
+    if tags and success:
+        return tags, mime, have_audio, duration
+
+    # Don't try workaround for non-seekable sources such as mmssrc:
+    if not _query_seekable(pipeline):
+        return tags, mime, have_audio, duration
+
+    # Workaround for upstream bug which causes tags/duration to arrive
+    # after pre-roll. We get around this by starting to play the track
+    # and then waiting for a duration change.
+    # https://bugzilla.gnome.org/show_bug.cgi?id=763553
+    logger.debug('Using workaround for duration missing before play.')
+    result = pipeline.set_state(Gst.State.PLAYING)
+    if result == Gst.StateChangeReturn.FAILURE:
+        return tags, mime, have_audio, duration
+    return tags, mime, have_audio, duration
+
+def setDebugText(msg):
+    if logger.isEnabledFor(log.TRACE_LOG_LEVEL) and msg.get_structure():
+        debug_text = msg.get_structure().to_string()
+        if len(debug_text) > 77:
+            debug_text = debug_text[:77] + '...'
+        _trace('element %s: %s', msg.src.get_name(), debug_text)
+        return debug_text
 
 if __name__ == '__main__':
     import os
