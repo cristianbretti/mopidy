@@ -57,7 +57,7 @@ class ClearCommand(commands.Command):
         print('Unable to clear library.')
         return 1
 
-
+cov = [False] * 22
 class ScanCommand(commands.Command):
     help = 'Scan local media files and populate the local library.'
 
@@ -70,6 +70,7 @@ class ScanCommand(commands.Command):
                           action='store_true', dest='force', default=False,
                           help='Force rescan of all media files')
 
+
     def run(self, args, config):
         media_dir = config['local']['media_dir']
         scan_timeout = config['local']['scan_timeout']
@@ -80,6 +81,7 @@ class ScanCommand(commands.Command):
 
         library = _get_library(args, config)
         if library is None:
+            cov[0] = True
             return 1
 
         file_mtimes, file_errors = path.find_mtimes(
@@ -88,9 +90,15 @@ class ScanCommand(commands.Command):
         logger.info('Found %d files in media_dir.', len(file_mtimes))
 
         if file_errors:
+            cov[1] = True
             logger.warning('Encountered %d errors while scanning media_dir.',
                            len(file_errors))
+
+
+
         for name in file_errors:
+            cov[2] = True
+
             logger.debug('Scan error %r for %r', file_errors[name], name)
 
         num_tracks = library.load()
@@ -101,28 +109,40 @@ class ScanCommand(commands.Command):
         uris_in_library = set()
 
         for track in library.begin():
+            cov[3] = True
+
             abspath = translator.local_track_uri_to_path(track.uri, media_dir)
             mtime = file_mtimes.get(abspath)
             if mtime is None:
+                cov[4] = True
+
                 logger.debug('Missing file %s', track.uri)
                 uris_to_remove.add(track.uri)
             elif mtime > track.last_modified or args.force:
                 uris_to_update.add(track.uri)
+                cov[5] = True
+
             uris_in_library.add(track.uri)
 
         logger.info('Removing %d missing tracks.', len(uris_to_remove))
         for uri in uris_to_remove:
             library.remove(uri)
+            cov[6] = True
 
         for abspath in file_mtimes:
+            cov[7] = True
             relpath = os.path.relpath(abspath, media_dir)
             uri = translator.path_to_local_track_uri(relpath)
 
-            if b'/.' in relpath or relpath.startswith(b'.'):
+            if b'/.' in relpath or relpath.startswith(b'.'): 
+                cov[8] = True
+                cov[9] = True
                 logger.debug('Skipped %s: Hidden directory/file.', uri)
             elif relpath.lower().endswith(excluded_file_extensions):
+                cov[10] = True
                 logger.debug('Skipped %s: File extension excluded.', uri)
             elif uri not in uris_in_library:
+                cov[11] = True
                 uris_to_update.add(uri)
 
         logger.info(
@@ -136,13 +156,16 @@ class ScanCommand(commands.Command):
         progress = _Progress(flush_threshold, len(uris_to_update))
 
         for uri in uris_to_update:
+            cov[12] = True
             try:
                 relpath = translator.local_track_uri_to_path(uri, media_dir)
                 file_uri = path.path_to_uri(os.path.join(media_dir, relpath))
                 result = scanner.scan(file_uri)
                 if not result.playable:
+                    cov[13] = True
                     logger.warning('Failed %s: No audio found in file.', uri)
                 elif result.duration < MIN_DURATION_MS:
+                    cov[14] = True
                     logger.warning('Failed %s: Track shorter than %dms',
                                    uri, MIN_DURATION_MS)
                 else:
@@ -150,6 +173,7 @@ class ScanCommand(commands.Command):
                     track = tags.convert_tags_to_track(result.tags).replace(
                         uri=uri, length=result.duration, last_modified=mtime)
                     if library.add_supports_tags_and_duration:
+                        cov[15] = True
                         library.add(
                             track, tags=result.tags, duration=result.duration)
                     else:
@@ -159,8 +183,10 @@ class ScanCommand(commands.Command):
                 logger.warning('Failed %s: %s', uri, error)
 
             if progress.increment():
+                cov[16] = True
                 progress.log()
                 if library.flush():
+                    cov[17] = True
                     logger.debug('Progress flushed.')
 
         progress.log()
