@@ -22,7 +22,7 @@ except ImportError:
 
 logger = logging.getLogger(__name__)
 
-
+cov = [False] * 30
 def main():
     log.bootstrap_delayed_logging()
     logger.info('Starting Mopidy %s', versioning.get_version())
@@ -31,7 +31,7 @@ def main():
     # Windows does not have signal.SIGUSR1
     if hasattr(signal, 'SIGUSR1'):
         signal.signal(signal.SIGUSR1, pykka.debug.log_thread_tracebacks)
-
+        cov[0] = True
     try:
         registry = ext.Registry()
 
@@ -46,7 +46,9 @@ def main():
         extensions_data = ext.load_extensions()
 
         for data in extensions_data:
+            cov[1] = True
             if data.command:  # TODO: check isinstance?
+                cov[2] = True
                 data.command.set(extension=data.extension)
                 root_cmd.add_child(data.extension.ext_name, data.command)
 
@@ -63,6 +65,7 @@ def main():
 
         verbosity_level = args.base_verbosity_level
         if args.verbosity_level:
+            cov[3] = True
             verbosity_level += args.verbosity_level
 
         log.setup_logging(config, verbosity_level, args.save_debug_log)
@@ -71,19 +74,23 @@ def main():
             'validate': [], 'config': [], 'disabled': [], 'enabled': []}
         for data in extensions_data:
             extension = data.extension
+            cov[4] = True
 
             # TODO: factor out all of this to a helper that can be tested
             if not ext.validate_extension_data(data):
+                cov[5] = True
                 config[extension.ext_name] = {'enabled': False}
                 config_errors[extension.ext_name] = {
                     'enabled': 'extension disabled by self check.'}
                 extensions['validate'].append(extension)
             elif not config[extension.ext_name]['enabled']:
+                cov[6] = True
                 config[extension.ext_name] = {'enabled': False}
                 config_errors[extension.ext_name] = {
                     'enabled': 'extension disabled by user config.'}
                 extensions['disabled'].append(extension)
             elif config_errors.get(extension.ext_name):
+                cov[7] = True
                 config[extension.ext_name]['enabled'] = False
                 config_errors[extension.ext_name]['enabled'] = (
                     'extension disabled due to config errors.')
@@ -94,16 +101,20 @@ def main():
         log_extension_info([d.extension for d in extensions_data],
                            extensions['enabled'])
 
-        # Config and deps commands are simply special cased for now.
+        # Config and deps commands are simply special cased for now.a
         if args.command == config_cmd:
+            cov[8] = True
             schemas = [d.config_schema for d in extensions_data]
             return args.command.run(config, config_errors, schemas)
+
         elif args.command == deps_cmd:
+            cov[9] = True
             return args.command.run()
 
         check_config_errors(config, config_errors, extensions)
 
         if not extensions['enabled']:
+            cov[10] = True
             logger.error('No extension enabled, exiting...')
             sys.exit(1)
 
@@ -111,12 +122,14 @@ def main():
         proxied_config = config_lib.Proxy(config)
 
         if args.extension and args.extension not in extensions['enabled']:
+            cov[11] = True
             logger.error(
                 'Unable to run command provided by disabled extension %s',
                 args.extension.ext_name)
             return 1
 
         for extension in extensions['enabled']:
+            cov[12] = True
             try:
                 extension.setup(registry)
             except Exception:
