@@ -7,28 +7,40 @@ from mopidy.models import Album, Track
 import pytest 
 class LocalLibrarySearchTest(unittest.TestCase):
 	
-
-	def test_enhance_validate_query(self):
+	#Andreas
+	def test_enhance_validate_query1(self):
 		expected_tracks = [Track(album=Album(name='foo'))]
 		tracks = [Track(), Track(album=Album(name='bar'))] + expected_tracks
 		with self.assertRaises(LookupError):
 			search.find_exact(tracks, {'hello': []})
+	#Tai
+	def test_enhance_validate_query2(self):
+		expected_tracks = [Track(album=Album(name='foo'))]
+		tracks = [Track(), Track(album=Album(name='bar'))] + expected_tracks
 		with self.assertRaises(LookupError):
 			search.find_exact(tracks, {'hello': ['foo',None]})
-
-	def test_enhace_search(self):
+	#Tai
+	def test_enhance_search1(self):
 		expected_tracks = [Track(album=Album(name='foo'))]
 		tracks = [Track(), Track(album=Album(name='bar'))] + expected_tracks
 		with self.assertRaises(LookupError):
 			search.search(tracks, {'hello': ['foo']})
+	#Tai
+	def test_enhance_search2(self):
+		expected_tracks = [Track(album=Album(name='foo'))]
+		tracks = [Track(), Track(album=Album(name='bar'))] + expected_tracks
 		search_result = search.search(tracks, {'album': ['foo']},limit=None)
 		self.assertEqual(search_result.tracks, tuple(expected_tracks))
-
-	def test_enhance_find_exact(self):
+	#Andreas
+	def test_enhance_find_exact1(self):
 		expected_tracks = [Track(album=Album(name='foo'))]
 		tracks = [Track(), Track(album=Album(name='bar'))] + expected_tracks
 		with self.assertRaises(LookupError):
 			search.find_exact(tracks, {'hello': ['foo']})
+	#Andreas
+	def test_enhace_find_exact2(self):
+		expected_tracks = [Track(album=Album(name='foo'))]
+		tracks = [Track(), Track(album=Album(name='bar'))] + expected_tracks
 		search_result = search.find_exact(tracks, {'album': ['foo']},limit=None)
 		self.assertEqual(search_result.tracks, tuple(expected_tracks))
 		
